@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Letter</title>
+    <style>
+        body {
+            background: radial-gradient(circle, #ffdde1, #ee9ca7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Georgia', serif;
+            text-align: center;
+            color: #5a1a2c;
+            padding: 20px;
+        }
+
+        /* Fixed Heart Shape */
+        .heart {
+            width: 120px;
+            height: 120px;
+            background-color: #ff4d6d;
+            position: relative;
+            transform: rotate(-45deg);
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: beat 1.5s infinite ease-in-out;
+        }
+
+        .heart::before, .heart::after {
+            content: "";
+            width: 120px;
+            height: 120px;
+            background-color: #ff4d6d;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .heart::before {
+            top: -60px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 60px;
+            top: 0;
+        }
+
+        /* Smooth Beating Animation */
+        @keyframes beat {
+            0%, 100% { transform: scale(1) rotate(-45deg); }
+            50% { transform: scale(1.1) rotate(-45deg); }
+        }
+
+        .letter-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            text-align: left;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .letter {
+            font-size: 18px;
+            white-space: pre-line;
+            overflow: hidden;
+            border-right: 3px solid #ff4d6d;
+            width: 0;
+            animation: typing 5s steps(100, end) forwards, blink 0.8s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Music -->
+    <audio id="bg-music" autoplay loop>
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+
+    <div class="heart"></div> <!-- Fixed Heart Animation -->
+
+    <div class="letter-container">
+        <h2>💖 My Valentine’s Letter 💖</h2>
+        <p class="letter">
+            I’ve thought about writing this letter countless times, but I guess now 
+            Valentine’s Day is the perfect moment to finally say what’s been on my mind 
+            for the past two years.
+
+            From the moment I met you, every conversation, every shared moment, no matter 
+            how small, has made my days brighter.
+
+            I don’t know if you’ve ever noticed, but you have this way of making everything 
+            feel lighter. I admire you more than I can put into words.
+
+            I’m not sure where this letter will lead, but I wanted you to know how much 
+            I appreciate you, not just today, but every day. If nothing else, I hope this 
+            makes you smile—because you deserve all the happiness in the world.
+
+            Happy Valentine’s Day, Jas 💕 
+
+            Yours,  
+            Javen
+        </p>
+    </div>
+
+</body>
+</html>
